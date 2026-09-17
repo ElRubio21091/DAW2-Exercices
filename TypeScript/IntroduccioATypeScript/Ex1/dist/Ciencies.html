@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ca">
+	<head>
+		<title>Ciències</title>
+		<meta charset="UTF-8" />
+
+		<style>
+			h4{margin-top:1.5em;margin-bottom:0.3em;}
+			button{width:1.8em;height:1.8em;margin-top:3px;margin-bottom:3px;}
+			div{vertical-align:middle;display:inline-block;height:2em;margin-top:4px;border:1px solid black;background-color:#e0e0e0;overflow-x:auto;}
+		</style>
+
+		<script type="module">
+			import { imc, convertidor } from "./Ciencies.js";
+
+			function _imc() {
+				let r = imc(document.getElementById('pes').value, document.getElementById('altura').value);
+				if (r != undefined) {
+					let v = r.split("-");
+					document.getElementById("imc").innerHTML = v[0];
+					document.getElementById("categoria").innerHTML = v[1];
+				}
+			}
+
+			function _convertidor() {
+				let r = convertidor(document.getElementById('m1').value, document.getElementById('cm1').value, document.getElementById('cm2').value);
+				if (r != undefined) document.getElementById("m2").innerHTML = r;
+			}
+
+			// Els atributs onclick/oninput del HTML esperen trobar-les a window,
+			// ja que un mòdul no exposa les seves funcions globalment.
+			window._imc = _imc;
+			window._convertidor = _convertidor;
+		</script>
+	</head>
+
+	<body>
+		<h4>IMC</h4>
+			Calcula l'índex de massa corporal i la categoria corresponent.<br>
+			Pes (Kg) &nbsp; &nbsp; <input style="margin-top:4px;margin-bottom:4px;" type="text" id="pes"><br>
+			Altura (cm) <input style="margin-top:4px;margin-bottom:4px;" type="text" id="altura"><br>
+			<button style="width:3.5em" onclick="_imc()">IMC</button>
+			<div id="imc" style="width:4em"></div>
+			<div id="categoria" style="width:9.5em"></div>
+		<h4>Convertidor</h4>
+			Converteix unitats de longitud.<br>
+			<input id="m1" style="margin-top:4px;margin-bottom:4px;" oninput="_convertidor()" type="text">
+			<select id="cm1" onchange="_convertidor()">
+				<option value="mm">mm</option>
+				<option value="cm">cm</option>
+				<option value="dm">dm</option>
+				<option value="m" selected>m</option>
+				<option value="Dm">Dm</option>
+				<option value="Hm">Hm</option>
+				<option value="Km">Km</option>
+			</select>
+			<br>
+			<div id="m2" style="width:11em"></div>
+			<select id="cm2" onchange="_convertidor()">
+				<option value="mm">mm</option>
+				<option value="cm">cm</option>
+				<option value="dm">dm</option>
+				<option value="m" selected>m</option>
+				<option value="Dm">Dm</option>
+				<option value="Hm">Hm</option>
+				<option value="Km">Km</option>
+			</select>
+	</body>
+</html>
