@@ -8,12 +8,11 @@
     "sourceMap": true,
     "inlineSources": true,
     "noEmitOnError": true,
-    "noImplicitAny":true,
+    "noImplicitAny": true,
     "strict": true,
     "allowJs": false,
     "removeComments": true
   },
-  "files": ["/global.d.ts"],
-  "include": [
-    "-/**/*.ts"]
+  "files": ["./global.d.ts"],
+  "include": ["./**/*.ts"]
 }
