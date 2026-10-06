@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8" />
+  <title>Clients i factures</title>
+</head>
+<body>
+  <h2>CLIENTS</h2>
+  <label>NIF: <input id="nif" size="8" /></label>
+  <label>Nom: <input id="nom" size="8" /></label>
+  <label>Cognoms: <input id="cognoms" size="14" /></label>
+  <button id="btnClient">Afegir client</button>
+  <div id="taulaClients"></div>
+
+  <h2>FACTURES</h2>
+  <label>Client <input id="clientId" size="6" /></label>
+  <button id="btnSeleccionar">Seleccionar client</button>
+  <br /><br />
+  <label>Data: <input id="data" type="date" /></label>
+  <label>Total: <input id="total" size="8" /></label>
+  <label><input id="pagada" type="checkbox" /> Pagada</label>
+  <button id="btnFactura">Afegir factura</button>
+  <div id="taulaFactures"></div>
+
+  <script type="module" src="dist/main.js"></script>
+</body>
+</html>
