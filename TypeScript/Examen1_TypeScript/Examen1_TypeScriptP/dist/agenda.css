@@ -1,0 +1,6 @@
+body { font-family: sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; }
+fieldset { margin-bottom: 1rem; }
+label { display: block; margin: .5rem 0 .2rem; }
+input, select { width: 100%; padding: .4rem; box-sizing: border-box; }
+button { margin: .4rem .3rem 0 0; padding: .4rem .8rem; cursor: pointer; }
+#resultat { padding: .5rem; border: 1px dashed #999; min-height: 3rem; }

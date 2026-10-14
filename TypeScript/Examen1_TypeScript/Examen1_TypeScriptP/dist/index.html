@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <title>Examen Bloc1 TypeScript</title>
+    <link rel="icon" type="image/png" href="favicon.ico">
+    <link rel="stylesheet" href="agenda.css" type="text/css">
+    <script type="module" src="main.js"></script>
+</head>
+<body>
+    <h1>Agenda de contactes</h1>
+
+    <fieldset>
+        <legend>Dades del contacte</legend>
+        <label for="nom">Nom</label>
+        <input type="text" id="nom">
+
+        <label for="telefon">Telèfon (clau)</label>
+        <input type="text" id="telefon">
+
+        <label for="email">Email</label>
+        <input type="text" id="email">
+
+        <label for="categoria">Categoria</label>
+        <select id="categoria">
+            <option value="familia">Família</option>
+            <option value="amics">Amics</option>
+            <option value="feina">Feina</option>
+        </select>
+    </fieldset>
+
+    <fieldset>
+        <legend>Operacions sobre un contacte</legend>
+        <button id="btnAfegir">Afegir</button>
+        <button id="btnCercar">Cercar</button>
+        <button id="btnModificar">Modificar</button>
+        <button id="btnEliminar">Eliminar</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>Consultes</legend>
+        <button id="btnLlistar">Llistar tots</button>
+        <button id="btnOrdenar">Ordenar per nom</button>
+        <button id="btnFiltrar">Filtrar per categoria</button>
+    </fieldset>
+
+    <div id="resultat"></div>
+</body>
+</html>
