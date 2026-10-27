@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chat</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      margin: 0;
+      padding: 12px;
+      height: 100vh;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    h1 { font-size: 1.1rem; margin: 0; }
+    #messages { flex: 1; resize: none; font-size: 0.95rem; padding: 8px; }
+    .row { display: flex; gap: 6px; }
+    #text { flex: 1; padding: 6px; }
+    #adminControls { display: none; gap: 6px; flex-wrap: wrap; }
+  </style>
+</head>
+<body>
+  <h1 id="title">Chat</h1>
+
+  <!-- Área de missatges -->
+  <textarea id="messages" readonly></textarea>
+
+  <!-- Campo per escriure (tots els usuaris, incluit l'admin) -->
+  <div class="row">
+    <input type="text" id="text" placeholder="Escribe un mensaje..." />
+    <button id="sendBtn">Enviar</button>
+  </div>
+
+  <!-- Controls només visibles per l'admin -->
+  <div id="adminControls">
+    <button id="closeP1">Cerrar P1</button>
+    <button id="closeP2">Cerrar P2</button>
+    <button id="clearAll">Borrar todo</button>
+  </div>
+
+  <script type="module" src="./dist/chat.js"></script>
+</body>
+</html>
