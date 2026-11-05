@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ca">
+	<head>
+		<title>Informació del sistema</title>
+		<meta charset="UTF-8" />
+		<style>
+			body{font-family:Arial,Helvetica,sans-serif;}
+			li{margin:0.2em 0; word-break:break-all;}
+		</style>
+	</head>
+
+	<body>
+		<h2>Informació del sistema</h2>
+		<div id="info"></div>
+		<br>
+		<button id="tanca">Tanca la finestra mare</button>
+
+		<script>
+			"use strict";
+
+			const CLAU_INFO = "infoSistema";
+			const cont = document.getElementById("info");
+
+			function mostraInfo() {
+				let seccions = null;
+				try {
+					const dades = localStorage.getItem(CLAU_INFO);
+					seccions = dades ? JSON.parse(dades) : null;
+				} catch (e) {
+					seccions = null;
+				}
+
+				if (!Array.isArray(seccions)) {
+					cont.textContent = "No hi ha dades a localStorage. Executa primer informacio() des de la pàgina principal.";
+					return;
+				}
+
+				for (const s of seccions) {
+					const p = document.createElement("p");
+					const b = document.createElement("b");
+					b.textContent = s.titol;
+					p.appendChild(b);
+					cont.appendChild(p);
+
+					const ul = document.createElement("ul");
+					for (const [etiqueta, valor] of s.dades) {
+						const li = document.createElement("li");
+						li.textContent = etiqueta + ": " + valor;
+						ul.appendChild(li);
+					}
+					cont.appendChild(ul);
+				}
+			}
+
+			document.getElementById("tanca").addEventListener("click", function () {
+				// Només funciona si aquesta finestra l'ha obert la mare amb window.open()
+				if (window.opener && !window.opener.closed) {
+					window.opener.close();
+				} else {
+					alert("No es pot tancar la finestra mare (el navegador només permet tancar finestres obertes per script).");
+				}
+			});
+
+			mostraInfo();
+		</script>
+	</body>
+</html>

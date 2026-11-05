@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ca">
+	<head>
+		<title>Finestres i marcs</title>
+		<meta charset="UTF-8" />
+
+		<style>
+			body{font-family:Arial,Helvetica,sans-serif;}
+			div{font-size:1.2em; font-weight:bold; color:white; text-align:center; border-radius:0.9em; background-image:linear-gradient(#04376a, #4578ab); width:9em; padding:0.4em 0;}
+			iframe{border:1px solid black; width:1000px; height: 500px;}
+		</style>
+		
+		<script defer src="FinestresMarcs.js"></script>
+
+	</head>
+
+	<body>
+		<br>URL: <input id="winURL" type="text"></input><br>
+		<br>Name: <input id="winName" type="text"></input><br>
+		<br> &nbsp; &nbsp; &nbsp;<button onclick="sF()">Marc</button>
+		&nbsp; &nbsp; &nbsp;<button onclick="nW()">Finestra</button><br>
+		<br><iframe id="fr0" name="info" src=""></iframe>
+	</body>
+</html>

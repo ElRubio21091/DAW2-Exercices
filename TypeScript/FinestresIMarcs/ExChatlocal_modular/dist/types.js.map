@@ -1,0 +1,1 @@
+{"version":3,"file":"types.js","sourceRoot":"","sources":["../src/types.ts"],"names":[],"mappings":"","sourcesContent":["// Tipos compartidos por todos los ficheros\n\nexport interface Message {\n  user: string; // quién escribe (ADMIN, P1 o P2)\n  text: string; // contenido del mensaje\n}\n\nexport type UserName = \"p1\" | \"p2\";\n"]}

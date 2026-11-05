@@ -1,0 +1,9 @@
+export const title = document.getElementById("title");
+export const textarea = document.getElementById("messages");
+export const input = document.getElementById("text");
+export const sendBtn = document.getElementById("sendBtn");
+export const adminControls = document.getElementById("adminControls");
+export const closeP1Btn = document.getElementById("closeP1");
+export const closeP2Btn = document.getElementById("closeP2");
+export const clearAllBtn = document.getElementById("clearAll");
+//# sourceMappingURL=dom.js.map
