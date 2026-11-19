@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multimèdia</title>
+  <link rel="stylesheet" href="media-controls.css">
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 0 1rem; }
+    video { width: 100%; display: block; background: #000; }
+    section { margin-bottom: 2.5rem; }
+  </style>
+</head>
+<body>
+  <h1>Multimèdia</h1>
+
+  <section>
+    <h2>Vídeo</h2>
+    <!-- Sin atributo "controls": la barra la crea el módulo TypeScript -->
+    <video id="video" src="media/aod new skins vesper 34k.mp4"></video>
+  </section>
+
+  <section>
+    <h2>Àudio</h2>
+    <audio id="audio" src="media/The Knave (Arlecchino)   Full Boss Theme   Genshin Impact 4.6 OST - Pixxena.mp3"></audio>
+  </section>
+
+  <script type="module" src="dist/main.js"></script>
+</body>
+</html>

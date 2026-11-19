@@ -1,0 +1,57 @@
+/* Estilos de la barra. Se pueden reutilizar tal cual en otros proyectos. */
+.media-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 640px;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background: #1f2430;
+  color: #e8ecf3;
+  border-radius: 0.5rem;
+  font: 0.9rem/1 system-ui, sans-serif;
+}
+
+.media-controls button {
+  min-width: 2.5rem;
+  height: 2.25rem;
+  padding: 0 0.6rem;
+  border: 0;
+  border-radius: 0.4rem;
+  background: #323a4d;
+  color: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.media-controls button:hover { background: #44506b; }
+.media-controls button:focus-visible { outline: 2px solid #7cc4ff; outline-offset: 2px; }
+
+/* Botones tipo interruptor (loop, mute) cuando están activados */
+.media-controls button[aria-pressed="true"] { background: #2f6fed; }
+
+.media-controls input[type="range"] { accent-color: #7cc4ff; cursor: pointer; }
+
+/* Posición: ocupa una fila entera */
+.media-controls__progress { flex: 1 1 100%; margin: 0; }
+
+.media-controls__time,
+.media-controls__volume,
+.media-controls__speed { font-variant-numeric: tabular-nums; }
+
+.media-controls__time { margin: 0 0.5rem 0 0.25rem; }
+.media-controls__volume { min-width: 3ch; text-align: center; }
+.media-controls__speed { min-width: 3.5rem; }
+.media-controls__volumeSlider { width: 6rem; }
+
+/* Pantalla completa: el vídeo ocupa todo y la barra queda abajo */
+.media-player:fullscreen {
+  display: flex;
+  flex-direction: column;
+  background: #000;
+}
+.media-player:fullscreen video { flex: 1; min-height: 0; width: 100%; object-fit: contain; }
+.media-player:fullscreen .media-controls { max-width: none; margin: 0; border-radius: 0; }
